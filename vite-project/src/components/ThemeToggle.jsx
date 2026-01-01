@@ -29,11 +29,8 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full hover:bg-border transition"
-      aria-label="Toggle theme"
-    >
+    <button onClick={toggleTheme}>
+    
       {""}
       {isDark ? (
         <Sun className="h-6 w-6 text-yellow-400" />
