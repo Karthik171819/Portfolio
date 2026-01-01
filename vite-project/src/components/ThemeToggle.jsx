@@ -4,15 +4,28 @@ import { Moon, Sun } from "lucide-react";
 export const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    const html = document.documentElement;
-    setIsDark(html.classList.contains("dark"));
-  }, []);
+    useEffect(() =>{
+        const storedTheme = localStorage.getItem("theme")
+        if (storedTheme === "dark") {
+            setIsDark(true);
+            document.documentElement.classList.add("dark");    
+        } else{
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "light");
+            setIsDark(false);
+        }
+    }, []);
 
   const toggleTheme = () => {
-    const html = document.documentElement;
-    const enabled = html.classList.toggle("dark");
-    setIsDark(enabled);
+    if (isDark) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
   };
 
   return (
@@ -21,6 +34,7 @@ export const ThemeToggle = () => {
       className="p-2 rounded-full hover:bg-border transition"
       aria-label="Toggle theme"
     >
+      {""}
       {isDark ? (
         <Sun className="h-6 w-6 text-yellow-400" />
       ) : (
