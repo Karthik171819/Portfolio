@@ -4,14 +4,14 @@
    THEME TOKENS
 ========================= */
 @theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  --color-border: rgb(var(--border));
+  --color-background: rgb(var(--background));
+  --color-foreground: rgb(var(--foreground));
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary: rgb(var(--primary));
+  --color-primary-foreground: rgb(var(--primary-foreground));
 
-  --color-card: hsl(var(--card));
+  --color-card: rgb(var(--card));
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -132,12 +132,12 @@
 }
 
 @utility star {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 20px rgba(255, 255, 255, 0.5);
+  @apply absolute rounded-full bg-white opacity-0 dark:opacity-100;
+  box-shadow: 0 0 6px  rgba(255, 255, 255, 0.4);
 }
 
 @utility meteor {
-  @apply absolute bg-gradient-to-r from-white via-white to-transparent rounded-full;
+  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 

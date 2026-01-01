@@ -34,7 +34,7 @@ export const ThemeToggle = () => {
       className={cn(
         "fixed top-5 right-5 z-50",
         "p-2 rounded-full",
-        "bg-white dark:bg-black shadow",
+
         "transition-transform duration-300 hover:scale-110",
         "focus:outline-none"
       )}
