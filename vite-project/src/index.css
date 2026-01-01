@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* =========================
+   THEME TOKENS
+========================= */
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
@@ -53,6 +56,9 @@
   }
 }
 
+/* =========================
+   BASE STYLES (CRITICAL)
+========================= */
 @layer base {
   :root {
     --background: 210 40% 98%;
@@ -63,7 +69,7 @@
     --border: 217 33% 91%;
   }
 
-  .dark {
+  :root.dark {
     --background: 22 47% 4%;
     --foreground: 213 31% 91%;
     --card: 222 47% 8%;
@@ -86,6 +92,9 @@
   }
 }
 
+/* =========================
+   UTILITIES
+========================= */
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
@@ -129,9 +138,11 @@
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
 }
 
+/* =========================
+   ROOT
+========================= */
 #root {
-  max-width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
 }
