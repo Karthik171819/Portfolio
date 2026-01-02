@@ -26,6 +26,14 @@ export const Navbar = () => {
         "fixed w-full z-40 transition-all duration-300",
         isScrolled ? "bg-background/80 backdrop-blur-md shadow-md py-3" : "py-5"
     )}>
-        
+
+        <div className="container flex items-center justify-between">
+            {/* Logo of portfolio */}
+            <a className="text-xl font-bold text-primary flex items-center">
+                <span className="relative z-10">
+                    <span className="text-glow text-foreground">Karthik</span> Portfolio
+                </span>
+            </a>
+        </div>
     </nav>
-}
+};
