@@ -20,7 +20,7 @@ export const HeroSection = () => {
             </p>
 
             <div>
-                <a htref="#projects" className="cosmic-button">
+                <a href="#projects" className="cosmic-button inline-block">
                     View My Work
                 </a>
             </div>
