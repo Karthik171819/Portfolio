@@ -46,7 +46,7 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
-              className="text-foreground hover:text-primary transition"
+              className="text-foreground /80 hover:text-accent transition-colors duration-300"
             >
               {item.name}
             </a>
