@@ -126,12 +126,36 @@
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-@utility gradient-border {
+/* @utility gradient-border {
   @apply relative rounded-md;
   background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box;
   border: 1px solid transparent;
+} */
+
+@utility gradient-border {
+  @apply relative rounded-xl p-[1px];
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.45),
+    rgba(59, 130, 246, 0.35)
+  );
 }
+
+@utility glass {
+  @apply rounded-xl
+         bg-white/10 dark:bg-black/30
+         backdrop-blur-lg
+         border border-white/10;
+}
+
+@utility card-hover {
+  @apply transition-transform duration-300 hover:scale-[1.03];
+}
+
+
+
+
 
 /* @utility cosmic-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
