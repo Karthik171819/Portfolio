@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -11,7 +12,7 @@ const navItems = [
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   //useEffect to handle scroll event
   useEffect(() => {
@@ -55,6 +56,13 @@ export const Navbar = () => {
         </div>
 
         {/* mobile nav */}
+
+        <button onClick={() => setIsMenuOpen((prev) => !prev)}
+          className="md:hidden p-2 text-foreground z-50"
+          >  
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+          </button>
+          
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
@@ -64,7 +72,7 @@ export const Navbar = () => {
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="hidden md:flex space-x-8">
+          <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((item, key) => (
               <a
                 key={key}
