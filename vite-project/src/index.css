@@ -7,6 +7,9 @@
   --color-border: rgb(var(--border));
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
+  --color-accent: rgb(var(--accent));
+  --color-accent: 168 85 247; /* Tailwind purple-500 */
+
 
   --color-primary: rgb(var(--primary));
   --color-primary-foreground: rgb(var(--primary-foreground));
@@ -68,6 +71,8 @@
     --primary: 0 0 0;
     --primary-foreground: 255 255 255;
     --border: 0 0 0;
+    --accent: 0 0 0; /* same as text */
+
   }
 
   /* Dark mode */
@@ -78,6 +83,8 @@
     --primary: 255 255 255;
     --primary-foreground: 0 0 0;
     --border: 255 255 255;
+    --accent: 168 85 247; /* purple */
+
   }
 
   * {
