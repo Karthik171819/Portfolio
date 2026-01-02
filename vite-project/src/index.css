@@ -8,7 +8,7 @@
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
   --color-accent: rgb(var(--accent));
-  --color-accent: 168 85 247; /* Tailwind purple-500 */
+  
 
 
   --color-primary: rgb(var(--primary));
