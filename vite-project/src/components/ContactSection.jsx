@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export const ContactSection = () => {
   return (
@@ -50,6 +50,23 @@ export const ContactSection = () => {
                   <a href="tel:+91 9731764017"
                   className="text-muted-foreground hover:text-accent transition-colors">
                     +91 9731764017
+                  </a>
+                </div>
+              </div>
+
+              {/* location details */}
+              <div className="flex items-start space-x-4">
+                <div className="p-3 rounded-full bg-accent/10">
+                  <MapPin className="h-6 w-6 text-accent" />{" "}
+                </div>
+                <div>
+                  <h4 className="font-medium">
+                    Location
+                  </h4>
+                  <a 
+                  className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    Bengaluru, INDIA
                   </a>
                 </div>
               </div>
