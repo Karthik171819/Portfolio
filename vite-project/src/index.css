@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 /* =========================
    THEME TOKENS
@@ -8,8 +11,6 @@
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
   --color-accent: rgb(var(--accent));
-  
-
 
   --color-primary: rgb(var(--primary));
   --color-primary-foreground: rgb(var(--primary-foreground));
@@ -36,7 +37,7 @@
   }
 
   @keyframes fade-in {
-    0% {
+    from {
       opacity: 0;
       transform: translateY(20px);
     }
@@ -63,28 +64,24 @@
    BASE STYLES
 ========================= */
 @layer base {
-  /* Light mode */
   :root {
-    --background: 255 255 255;   /* white */
-    --foreground: 0 0 0;         /* black */
+    --background: 255 255 255;
+    --foreground: 0 0 0;
     --card: 255 255 255;
     --primary: 0 0 0;
     --primary-foreground: 255 255 255;
     --border: 0 0 0;
-    --accent: 99 102 241; /* same as text */
-
+    --accent: 99 102 241; /* purple */
   }
 
-  /* Dark mode */
   :root.dark {
-    --background: 0 0 0;         /* black */
-    --foreground: 255 255 255;   /* white */
+    --background: 0 0 0;
+    --foreground: 255 255 255;
     --card: 0 0 0;
     --primary: 0 0 0;
     --primary-foreground: 255 255 255;
     --border: 255 255 255;
     --accent: 168 85 247; /* purple */
-
   }
 
   * {
@@ -98,8 +95,6 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-color: rgb(var(--background));
-    color: rgb(var(--foreground));
   }
 }
 
@@ -123,15 +118,8 @@
 }
 
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-transform duration-300 hover:scale-[1.03];
 }
-
-/* @utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
-} */
 
 @utility gradient-border {
   @apply relative rounded-xl p-[1px];
@@ -142,13 +130,6 @@
   );
 }
 
-/* @utility glass {
-  @apply rounded-xl
-         bg-white/10 dark:bg-black/30
-         backdrop-blur-lg
-         border border-white/10;
-} */
-
 @utility glass {
   @apply rounded-xl
          bg-black/40
@@ -157,21 +138,6 @@
          shadow-[0_8px_30px_rgba(0,0,0,0.6)]
          transition-all duration-300;
 }
-
-
-@utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.03];
-}
-
-
-
-
-
-/* @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139, 92, 246, 0.5)]
-         hover:scale-105 active:scale-95;
-} */
 
 @utility cosmic-button {
   @apply px-6 py-2 rounded-full
@@ -184,10 +150,9 @@
          active:scale-95;
 }
 
-
 @utility star {
   @apply absolute rounded-full bg-white opacity-0 dark:opacity-100;
-  box-shadow: 0 0 6px  rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
 @utility meteor {
@@ -202,5 +167,4 @@
   min-height: 100vh;
   margin: 0 auto;
   padding: 10px;
-  
 }
