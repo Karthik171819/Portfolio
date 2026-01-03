@@ -1,4 +1,5 @@
-import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export const ContactSection = () => {
   return (
@@ -10,7 +11,7 @@ export const ContactSection = () => {
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           I’m actively looking for entry-level opportunities as a JavaScript
-          Full-Stack Developer. I enjoy building real-world web applications and
+          Junior Developer. I enjoy building real-world web applications and
           continuously improving my skills. If you’d like to collaborate or
           think I’d be a good fit for your team, feel free to reach out.
         </p>
@@ -69,18 +70,89 @@ export const ContactSection = () => {
             </div>
 
             {/* social media active links */}
-            <div className="pt-8" >
+            <div className="pt-8 flex flex-col items-center">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
                 <a href="https://www.linkedin.com/in/karthik-k-dev/">
-                  <Linkedin/>
+                  <Linkedin />
                 </a>
 
                 <a href="https://github.com/Karthik171819">
-                  <Github/>
+                  <Github />
                 </a>
               </div>
             </div>
+          </div>
+
+          {/* contact form */}
+          <div className="bg-card p-8 rounded-lg shadow-xs">
+            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+
+            <form className="space-y-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
+                  {" "}
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlined-hidden focus:ring-2 focus:ring-accent"
+                  placeholder="enter a name"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
+                  {" "}
+                  Your email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlined-hidden focus:ring-2 focus:ring-accent"
+                  placeholder="enter your mail id"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
+                  {" "}
+                  Your Message
+                </label>
+                <textarea
+                  type="text"
+                  id="message"
+                  name="message"
+                  required
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outlined-hidden focus:ring-2 focus:ring-accent resize-none"
+                  placeholder="enter a message"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={cn(
+                  "cosmic-button w-full flex items-center justify-center gap-2"
+                )}
+              >
+                Send Message
+                <Send size={16}/>
+              </button>
+            </form>
           </div>
         </div>
       </div>
