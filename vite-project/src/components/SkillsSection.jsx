@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const skills = [
   //frontend
@@ -20,10 +21,14 @@ const skills = [
   { name: "VS Code", level: 80, category: "tools" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"]
+const categories = ["all", "frontend", "backend", "tools"];
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] =  useState("all");
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredSkills = skills.filter(
+    (skill) => activeCategory === "all" || skill.category == activeCategory
+  );
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -33,14 +38,21 @@ export const SkillsSection = () => {
 
         {/* filter section */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category, key) =>
-            <button key={key}> {category} </button>)}
-
+          {categories.map((category, key) => (
+            <button
+              key={key}
+              onClick={ () => setActiveCategory(category)}
+              className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                            activeCategory === category ? "bg-accent text-accent-foreground" : "bg-secondary/70 text-foreground hover:bg-secondary "
+              )}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
+          {filteredSkills.map((skill, index) => (
             <div key={index} className="gradient-border">
               <div className="glass glass-hover p-4 card-hover">
                 <h3 className="font-semibold text-lg mb-3 text-center">
