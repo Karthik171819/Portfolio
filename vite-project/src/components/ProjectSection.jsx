@@ -19,7 +19,7 @@ const projects = [
     image: "/projects/project2.png",
     tags: ["JavaScript", "HTML", "CSS", "API"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Karthik171819/JavaScript-Project.git",
   },
 
   {
@@ -29,8 +29,8 @@ const projects = [
       "Interactive movie-store web application with smooth user intutive using React",
     image: "/projects/project3.png",
     tags: ["JavaScript", "React", "API"],
-    demoUrl: "#",
-    githubUrl: "#",
+    demoUrl: "https://film-vault-silk.vercel.app/",
+    githubUrl: "https://github.com/Karthik171819/Movie-Vault",
   },
 ];
 
@@ -59,7 +59,7 @@ export const ProjectSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover  transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <div className="p-6">
@@ -71,7 +71,7 @@ export const ProjectSection = () => {
                   ))}
                 </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-center">
+              <h3 className="text-xl font-semibold mb-2 text-center text-accent">
                 {project.title}
               </h3>
               <p className="text-muted-foreground text-sm mb-4">
@@ -88,7 +88,7 @@ export const ProjectSection = () => {
                     <ExternalLink />
                   </a>
                   <a
-                    href={project.demoUrl}
+                    href={project.githubUrl}
                     target="_blank"
                     className="text-foreground/80 hover:text-primary transition-colors duration-300"
                   >
