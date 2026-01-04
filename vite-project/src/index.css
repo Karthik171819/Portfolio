@@ -71,7 +71,7 @@
     --primary: 0 0 0;
     --primary-foreground: 255 255 255;
     --border: 0 0 0;
-    --accent: 99 102 241; /* purple */
+    --accent: 168 85 247; /* purple */
   }
 
   :root.dark {
