@@ -14,6 +14,7 @@
   --color-primary-foreground: rgb(var(--primary-foreground));
 
   --color-card: rgb(var(--card));
+  --color-footer: rgb(var(--footer));
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -70,6 +71,7 @@
     --primary-foreground: 255 255 255;
     --border: 0 0 0;
     --accent: 168 85 247; /* purple */
+    --footer: 245 245 247; /* light gray */
   }
 
   :root.dark {
@@ -80,6 +82,7 @@
     --primary-foreground: 255 255 255;
     --border: 255 255 255;
     --accent: 168 85 247; /* purple */
+    --footer: 15 15 18; /*  dark footer */
   }
 
   * {
