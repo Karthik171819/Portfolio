@@ -9,7 +9,7 @@ const projects = [
     image: "/projects/project1.png",
     tags: ["Python", "Django", "CSS"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/Karthik171819/E-Commerce-Django.git",
   },
 
   {
@@ -18,7 +18,7 @@ const projects = [
     description: "A Currency-Conerter web application fetching API",
     image: "/projects/project2.png",
     tags: ["JavaScript", "HTML", "CSS", "API"],
-    demoUrl: "#",
+    demoUrl: "https://money-converter-tau.vercel.app/",
     githubUrl: "https://github.com/Karthik171819/JavaScript-Project.git",
   },
 
