@@ -18,3 +18,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+//make sure to add this Footer component to your main App component or layout so that it appears on your website.
